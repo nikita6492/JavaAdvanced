@@ -1,0 +1,9 @@
+Problem: Reverse a matrix
+
+1. Create a square matrix to store reversed elements
+2. Iterate through the rows
+3. For each row iterate through columns
+4. for each [row][column] store the element of that cell to the reversed indexes of the reversed matrix 
+ [row]->[column]
+ [column]->[row]
+ 
