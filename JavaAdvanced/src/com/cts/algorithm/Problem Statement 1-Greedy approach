@@ -1,0 +1,25 @@
+Problem  = a[3]={1,2,3}
+         a[4]={1,2,3,4}
+         if there is any duplicate between these 2 arrays we have to ensure only one entry is there
+
+      Approach 1:   
+         1. As the problem demands of increasing the size of the array dynamically 
+            use arraylist for storing values from both arrays
+            
+         2. iterate array with maximum size
+         
+         3. on each iteration of elements of first array, compare with each element from second array
+         
+         4. if count 0( no duplicate) simply add to arraylist
+         
+         5. if count greater than 0 than check if arraylist contains that element 
+         
+         6. if arraylist contains then don't add otherwise add it to the list.
+         
+         Suggested new approach:
+         
+         1. Merge both arrays
+         
+         2. Convert to set(duplicate values will be removed - onluy unique values will remain)
+         
+         3. again convert it to array

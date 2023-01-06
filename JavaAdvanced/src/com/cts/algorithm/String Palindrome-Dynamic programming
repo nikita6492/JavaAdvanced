@@ -1,0 +1,15 @@
+Problem : If a string is palindrome
+
+
+1. Store the string in stringbuilder
+2. call reverse method on the string
+3. compare both the strings using equals method
+4. if equal then it is palindrome.
+
+without using built in method reverse
+
+1. store the string
+2. iterate over the string from length-1 to 0 using charAt
+3. take each character and concat and create new string
+4. compare both the string using equals method
+5. if equal then it is palindrome

@@ -1,0 +1,18 @@
+Problem: Add two numbers using bitwise algorithms
+
+1. Initialize a variable sum to 0 and a variable carry to 0.
+
+2. Iterate over the bits of the two numbers A and B, starting with the least significant bit. 
+
+3. Set sum to the XOR of sum and A XOR B. 
+
+4. Set carry to the AND of A and B. This will give us the carry over for the next iteration.
+
+5. Left shift carry by 1. This is equivalent to multiplying it by 2 and preparing it to be added to the next set of bits.
+
+6. Set A and B to the next set of bits in their respective numbers.
+
+7. Repeat steps 2-6 until all the bits have been processed.
+
+8. At the end, sum will contain the desired sum of the two numbers, 
+and carry will be 0 if there was no carry over, or 1 if there was.

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class SynchronizedHashMap {
@@ -15,12 +16,12 @@ public class SynchronizedHashMap {
 	    hashmap.put(3, "C");
 	    hashmap.put(4, "D");
 	    hashmap.put(5, "E");
-	    Map map= Collections.synchronizedMap(hashmap);
-	    Set set = map.entrySet();
+	    Map<Integer, String> map= Collections.synchronizedMap(hashmap);
+	    Set<Entry<Integer, String>> set = map.entrySet();
 	    synchronized(map){
-	        Iterator i = set.iterator();
+	        Iterator<Entry<Integer, String>> i = set.iterator();
 	        while(i.hasNext()) {
-	            Map.Entry pair = (Map.Entry)i.next();
+	            Map.Entry<Integer, String> pair = (Map.Entry<Integer, String>)i.next();
 	            System.out.print(pair.getKey() + ": ");
 	            System.out.println(pair.getValue());
 	        }
