@@ -4,10 +4,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -171,6 +176,12 @@ public class StreamOperations {
 		 * System.out.println("Key : " + entry.getKey() + ", Value : " +
 		 * entry.getValue()); }
 		 */
+		System.out.println("Iterator");
+		Iterator<Entry<Long, Integer>> itr = orderMap.entrySet().iterator();
+		while(itr.hasNext()) {
+			Map.Entry<Long, Integer> map= itr.next();
+			System.out.println(map.getKey()+"::"+map.getValue());
+		}
 
 		System.out.println("======================================================================");
 		// Produce a data map with order records grouped by customer
@@ -199,12 +210,13 @@ public class StreamOperations {
 		System.out.println("======================================================================");
 
 		//Get the most expensive product by category
-		Map<String, Optional<Product>> productCat= productList.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.maxBy(Comparator.comparing(Product::getPrice))));
+		Map<String, Optional<Product>> productCat= productList.stream().collect(
+				Collectors.groupingBy(Product::getCategory, Collectors.maxBy(Comparator.comparing(Product::getPrice))));
 		System.out.println("Get the most expensive product by category");
 		productCat.forEach((k, v) -> System.out.println("Key::" + k + ", Value::" + v.get().getName()));
 
 		System.out.println("======================================================================");
-		
+	
 	}
 
 }
