@@ -2,6 +2,7 @@ package com.cts.multithreading;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 class Task implements Runnable{
 	
@@ -30,7 +31,6 @@ public class FixedThreadPool {
 		}
 		
 		exec.shutdown();
-
 	}
 
 }

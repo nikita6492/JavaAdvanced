@@ -26,7 +26,7 @@ public class UsingCallableAndFuture {
 		ExecutorService exec=Executors.newSingleThreadExecutor();
 		
 		 Future<Integer> future = exec.submit(new CallableTask());
-
+		
 	        // Do some other work
 	        System.out.println("Doing some other work...");
 

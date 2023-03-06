@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamOperations3 {
 
@@ -42,10 +43,10 @@ public class StreamOperations3 {
 		
 		//Given a list of strings, use the Stream API to find the longest string in the list.
 		List<String> strList = Arrays.asList("apple","banana","cherry","himalaya");
-		String longest = strList.stream().reduce("", (a,b)->a.length()>b.length()?a:b);
+		//String longest = strList.stream().reduce("", (a,b)->a.length()>b.length()?a:b);
 		Optional<String> longest2 = strList.stream().max(Comparator.comparing(String::length));
 		System.out.println("Given a list of strings, use the Stream API to find the longest string in the list.");
-		System.out.println(longest);
+		//System.out.println(longest);
 		System.out.println(longest2.get());
 		System.out.println("===================================================================");
 		
@@ -55,7 +56,7 @@ public class StreamOperations3 {
 		OptionalDouble avg = list.stream().mapToInt(Integer::intValue).average();
 		System.out.println(avg.getAsDouble());
 		System.out.println("====================================================================");
-		
+
 		//Given a list of Employee objects, use the Stream API to find the employee with the highest salary.
 		System.out.println("use the Stream API to find the employee with the highest salary.");
 		Optional<Employee> emp =empList.stream().max(Comparator.comparing(Employee::getEmpSal));

@@ -44,6 +44,8 @@ public class StreamOperations2 {
 		empMap.forEach((k, v) -> System.out.println("EmpName::" + k + "-EmpSal::" + v));
 		System.out.println("================================================================");
 		
+		List<String> nameList = empList.stream().map(Employee::getEmpName).collect(Collectors.toList());
+		nameList.forEach(System.out::println);
 		// Given a list of Employee objects, use the Stream API to create a map that
 		// maps the groups employee department wise
 		
