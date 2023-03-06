@@ -31,6 +31,8 @@ public class Atm {
 
 		PrintAccountDetails printAccountDetails2 = new PrintAccountDetails(account2);
 		printAccountDetails2.printAccountDetailsOnPaper();
+		
+		
 
 	}
 
